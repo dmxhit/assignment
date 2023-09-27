@@ -26,7 +26,7 @@ function App() {
         <Route
           path="/"
           element={
-            isAuthenticated ? (
+            isAuthenticated() ? (
               <Home socket={socket} />
             ) : (
               <Navigate to="/login" replace />
