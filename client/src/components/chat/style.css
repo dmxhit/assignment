@@ -1,0 +1,120 @@
+.chat {
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat__main {
+  width: 100%;
+}
+.chat__header {
+  margin: 30px 0 20px 0;
+}
+.chat__users > * {
+  margin-bottom: 10px;
+  color: #607eaa;
+  font-size: 14px;
+}
+
+.chat__mainHeader {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  background-color: #007bff;
+}
+.chat__mainHeader p {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+.leaveChat__btn {
+  width: 40px;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+  cursor: pointer;
+}
+.send__btn_icon {
+  height: 100%;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+  cursor: pointer;
+}
+.message__container {
+  width: 100%;
+  height: 80vh;
+  background-color: #fff;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.message__container > * {
+  margin-bottom: 10px;
+}
+.chat__footer {
+  padding: 10px;
+  background-color: rgba(128, 128, 128, 0.177);
+  height: 10vh;
+}
+.form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.message {
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 15px;
+}
+.send__btn {
+  width: 10%;
+  height: 100%;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #007bff;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+.send__btn:hover {
+  background-color: #007bffb6;
+}
+.message__recipient {
+  background-color: #007bff3d;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+.message__sender {
+  background-color: rgba(128, 128, 128, 0.177);
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  font-size: 15px;
+}
+.message__chats > p {
+  font-size: 13px;
+}
+.sender__name {
+  text-align: right;
+}
+.message__status {
+  position: fixed;
+  bottom: 50px;
+  font-size: 13px;
+  font-style: italic;
+}
