@@ -10,7 +10,8 @@ import Register from "./components/Register";
 import Home from "./components/Home";
 import socketIO from "socket.io-client";
 import ChatPage from "./components/chat";
-const socket = socketIO.connect("http://localhost:5000");
+const socket = socketIO.connect("http://localhost:4000");
+
 function isAuthenticated() {
   const token = localStorage.getItem("token");
   return token !== null;
@@ -21,18 +22,18 @@ function App() {
     <Router>
       <Routes>
         <Route path="/register" element={<Register />} />
+
         <Route
           path="/"
           element={
-            isAuthenticated() ? (
+            isAuthenticated ? (
               <Home socket={socket} />
             ) : (
               <Navigate to="/login" replace />
             )
           }
         />
-        <Route path="/chat" element={<ChatPage socket={socket} />}></Route>
-
+        <Route path="/chat" element={<ChatPage socket={socket}/>}></Route>
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>

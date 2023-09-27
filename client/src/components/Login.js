@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import LoginCard from "./shared/card";
 import api from "../api";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -37,7 +38,7 @@ const Login = () => {
       if (response.status === 201) {
         const user = response?.data;
         localStorage.setItem("token", user?.token);
-        redirect("/");
+        navigate("/");
       }
     } catch (error) {
       if (error.response && error.response.data) {

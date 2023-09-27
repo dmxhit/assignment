@@ -8,7 +8,7 @@ const ChatFooter = ({ socket, name }) => {
   // Trigger event when use click on send message button
   const handleSendMessage = (e) => {
     e.preventDefault();
-    if (message.trim() && localStorage.getItem("userName")) {
+    if (message.trim()) {
       socket.emit("message", {
         text: message,
         name: name,

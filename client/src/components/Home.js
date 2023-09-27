@@ -5,7 +5,7 @@ import api from "../api";
 import "./style.css";
 const Home = () => {
   const [user, setUser] = useState();
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
   useEffect(() => {
     getUserDetail();
@@ -22,7 +22,7 @@ const Home = () => {
   };
   const logout = () => {
     localStorage.clear();
-    window.location.reload();
+    navigate("/login");
   };
   return (
     <div className="home__container">

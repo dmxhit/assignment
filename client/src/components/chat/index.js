@@ -3,20 +3,29 @@ import ChatBody from "./ChatBody";
 import ChatFooter from "./ChatFooter";
 import api from "../../api";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
+
 const ChatPage = ({ socket }) => {
   const [messages, setMessages] = useState([]);
   const [user, setUser] = useState();
+  let navigate = useNavigate();
 
   useEffect(() => {
     getUserDetail();
     socket.on("messageResponse", (data) => setMessages([...messages, data]));
   }, [socket, messages]);
-  const getUserDetail = async () => {
+
+  const getUserDetail = async () => {try {
     const response = await api.get("/auth/getuser");
     if (response) {
       setUser(response?.data?.data);
     }
+  } catch (error) {
+    navigate("/login");
+  }
+ 
   };
+  
   return (
     <div className="chat">
       <div className="chat__main">

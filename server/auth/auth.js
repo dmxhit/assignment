@@ -30,11 +30,13 @@ exports.register = async (req, res) => {
           token: token,
         });
       })
-      .catch((error) =>
+      .catch((error) => {
+        console.log(error)
         res.status(400).json({
-          message: "User not successful created",
+          message: error.message,
           error: error.message,
         })
+      }
       );
   });
 };
